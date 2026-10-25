@@ -1,0 +1,349 @@
+/* =====================================================
+   1. CONFIGURACIÓN GENERAL
+   ===================================================== */
+
+html {
+    font-size: 14px;
+    position: relative;
+    min-height: 100%;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+/* Colores reutilizables: cambia la marca desde aquí. */
+:root {
+    --color-primary: #0f2a4a;
+    --color-secondary: #3b6b8f;
+    --color-accent: #8cc7e3;
+    --color-hero: #2f5b7e; /* NUEVO: azul acero claro y apagado, solo para la portada.
+                                    Más claro = sube los números; más oscuro = bájalos. */
+    --color-background: #ffffff;
+    --color-light: #f3f8fc;
+    --color-text: #263746;
+}
+
+body {
+    margin: 0;
+    color: var(--color-text);
+    background-color: var(--color-background);
+    font-family: "Plus Jakarta Sans", Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+.body-content {
+    margin-top: 100px;
+}
+
+main {
+    width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* =====================================================
+   2. ENCABEZADO Y NAVEGACIÓN
+   ===================================================== */
+
+.site-header {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 24px 7%;
+    background-color: var(--color-background);
+}
+
+/* LOGO: pone el icono a la izquierda y los textos a la derecha, bien alineados. */
+.logo {
+    display: flex;
+    align-items: center; /* centra el icono y los textos a la misma altura */
+    gap: 14px; /* separación entre el icono y los textos (más número = más espacio) */
+}
+
+/* TEXTOS DEL LOGO: acomoda el nombre arriba y la especialidad abajo. */
+.logo-text {
+    display: flex;
+    flex-direction: column; /* uno debajo del otro */
+    line-height: 1.3; /* espacio entre las dos líneas */
+}
+
+/* ICONO DEL LOGO: el hueso dentro de un círculo claro. */
+.logo-icon {
+    height: 56px; /* ALTURA: súbela para hacerlo más grande, bájala para hacerlo más pequeño */
+    width: auto; /* el ancho se ajusta solo para que la imagen no se deforme */
+}
+
+.logo-name {
+    color: var(--color-primary);
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.logo-specialty {
+    margin-top: 5px;
+    color: var(--color-secondary);
+    font-size: 0.7rem;
+    letter-spacing: 1.5px;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+    .main-nav a {
+        color: var(--color-text);
+        font-size: 0.9rem;
+        transition: color 0.2s ease;
+    }
+
+        .main-nav a:hover {
+            color: var(--color-secondary);
+        }
+
+
+/* =====================================================
+   3. BOTONES PARA AGENDAR CITA
+   ===================================================== */
+
+.btn-appointment {
+    display: inline-block;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 999px;
+    background-color: var(--color-primary);
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+    .btn-appointment:hover {
+        background-color: var(--color-secondary);
+        color: #ffffff;
+    }
+
+
+/* =====================================================
+   4. SECCIÓN PRINCIPAL (HERO) CON FOTO COMPLETA ARRIBA
+   ===================================================== */
+
+/* Fondo azul, texto a la izquierda y borde inferior curvo. */
+.hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 500px;
+    padding: 90px 7% 130px;
+    box-sizing: border-box;
+    background-color: var(--color-hero); /* antes era el azul oscuro */
+    clip-path: ellipse(120% 100% at 50% 0%);
+}
+
+.hero-background {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+    /* Foto del banner principal. */
+    .hero-background img {
+        position: absolute;
+        inset: 0; /* cubre toda la portada */
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center center; /* mueve la foto: sube el % para ver más la parte derecha */
+    }
+
+    /* La foto se funde con el azul hacia la izquierda. */
+    .hero-background::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient( 90deg, rgba(47, 91, 126, 0.92) 0%, /* izquierda: azul fuerte para que el texto se lea */
+        rgba(47, 91, 126, 0.85) 30%, /* sigue tapando la foto, pero ya se nota algo */
+        rgba(47, 91, 126, 0.55) 48%, /* mezcla: azul y foto por igual */
+        rgba(47, 91, 126, 0.18) 65%, /* casi todo foto */
+        rgba(47, 91, 126, 0) 82% /* derecha: foto limpia, sin azul */
+        );
+    }
+.hero-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 560px;
+}
+
+.hero-label {
+    color: var(--color-accent);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    margin: 20px 0;
+    color: #ffffff;
+    font-size: clamp(2.5rem, 4vw, 4.2rem);
+    font-weight: 600;
+    line-height: 1.15;
+}
+
+    .hero h1 span {
+        color: var(--color-accent);
+    }
+
+.hero-description {
+    max-width: 480px;
+    margin-bottom: 30px;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+/* El botón del hero va en celeste para contrastar con el azul. */
+.hero .btn-appointment {
+    background-color: var(--color-accent);
+    color: var(--color-primary);
+}
+
+    .hero .btn-appointment:hover {
+        background-color: #ffffff;
+        color: var(--color-primary);
+    }
+
+
+/* =====================================================
+   5. ESPECIALIDADES Y OTRAS SECCIONES
+   ===================================================== */
+
+.services,
+.about,
+.contact {
+    padding: 80px 7%;
+    text-align: center;
+}
+
+.services {
+    background-color: var(--color-background);
+}
+
+.about {
+    background-color: var(--color-light);
+}
+
+.contact {
+    background-color: var(--color-background);
+}
+
+    .services h2,
+    .about h2,
+    .contact h2 {
+        margin-bottom: 16px;
+        color: var(--color-primary);
+        font-size: clamp(1.8rem, 3vw, 2.5rem);
+        font-weight: 600;
+    }
+
+.services > p {
+    color: var(--color-secondary);
+}
+
+
+/* =====================================================
+   6. ADAPTACIÓN A TABLETAS
+   ===================================================== */
+
+@media (max-width: 900px) {
+    .site-header {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .main-nav {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 18px;
+    }
+
+    .hero {
+        min-height: 560px;
+        padding: 55px 5% 100px;
+    }
+
+    .hero-content {
+        max-width: 520px;
+    }
+}
+
+
+/* =====================================================
+   7. ADAPTACIÓN A CELULARES
+   ===================================================== */
+
+@media (max-width: 600px) {
+    .site-header {
+        padding: 20px 5%;
+    }
+
+    .logo-name {
+        font-size: 1.2rem;
+    }
+
+    .btn-appointment {
+        padding: 10px 14px;
+        font-size: 0.85rem;
+    }
+
+    .main-nav {
+        justify-content: flex-start;
+        gap: 15px;
+    }
+
+    .hero {
+        min-height: 540px;
+        padding: 45px 6% 90px;
+    }
+
+        .hero h1 {
+            font-size: 2.6rem;
+        }
+
+    .hero-description {
+        font-size: 1rem;
+    }
+
+    /* En celular la foto cubre todo y el azul la oscurece para leer el texto. */
+    .hero-background img {
+        width: 100%;
+    }
+
+    .hero-background::after {
+        background: rgba(20, 57, 107, 0.8);
+    }
+
+    .services,
+    .about,
+    .contact {
+        padding: 55px 6%;
+    }
+}

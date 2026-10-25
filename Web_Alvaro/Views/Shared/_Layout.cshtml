@@ -1,0 +1,66 @@
+﻿
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>@ViewData["Title"]</title>
+
+    <!-- Hoja de estilos principal -->
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+
+
+
+<body>
+    <!-- Header Nav -->
+    <header class="site-header">
+
+        <!-- Nombre y especialidad del médico -->
+        <!-- LOGO: el icono y el nombre del doctor, arriba a la izquierda.
+     Si haces clic aquí, la página sube al inicio. -->
+        <a href="#inicio" class="logo">
+
+            <!-- ICONO: el dibujito del hueso que aparece junto al nombre. -->
+            <!-- ICONO DEL LOGO: la rodilla que aparece junto al nombre del doctor. -->
+            <img src="~/images/logo.svg" alt="Logo del Dr. Álvaro Cordero Herrera" class="logo-icon" />
+
+            <!-- TEXTOS: aquí van juntos el nombre y la especialidad,uno encima del otro, al lado del icono. -->
+            <span class="logo-text">
+                <!-- Nombre del doctor: aquí se cambia el noombre . -->
+                <span class="logo-name">Dr. Álvaro Cordero Herrera</span>
+                <!-- Especialidad: el texto pequeño que va debajo del nombre. -->
+                <span class="logo-specialty">ORTOPEDIA Y TRAUMATOLOGÍA</span>
+            </span>
+        </a>
+        <!-- Menú de navegación -->
+        <nav class="main-nav" aria-label="Navegación principal">
+            <a asp-controller="Home" asp-action="Index">Inicio</a>
+            <a asp-controller="Home" asp-action="Prueba">Especialidades</a>
+            <a href="#sobre-mi">Sobre mí</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+
+        <!-- Botón para solicitar una cita -->
+        <a href="#contacto" class="btn-appointment">
+            Agendar cita
+        </a>
+
+    </header>
+    
+    <!-- Aquí se muestra el contenido de cada vista -->
+
+    <div class="body-content">
+        @RenderBody()
+    </div>
+
+    <!-- Scripts de JavaScript -->
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <!-- Permite cargar scripts específicos de cada vista -->
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+</html>
