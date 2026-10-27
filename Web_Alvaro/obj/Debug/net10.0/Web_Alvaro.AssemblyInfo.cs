@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Web_Alvaro")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+43a3afe2548c4fd342b78ecd48d18ea1cc597393")]
 [assembly: System.Reflection.AssemblyProductAttribute("Web_Alvaro")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Web_Alvaro")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

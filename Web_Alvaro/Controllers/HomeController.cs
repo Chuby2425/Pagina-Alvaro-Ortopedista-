@@ -16,7 +16,7 @@ namespace Web_Alvaro.Controllers
             return View();
         }
 
-        public IActionResult Prueba()
+        public IActionResult Formacion_academica()
         {
             // Muestra la vista Views/Home/Prueba.cshtml
             return View();

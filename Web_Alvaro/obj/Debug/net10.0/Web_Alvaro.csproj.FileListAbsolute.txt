@@ -98,3 +98,4 @@ J:\Proyectos\Pagina Alvaro Herrera\Web_Alvaro\Web_Alvaro\obj\Debug\net10.0\Web_A
 J:\Proyectos\Pagina Alvaro Herrera\Web_Alvaro\Web_Alvaro\obj\Debug\net10.0\ref\Web_Alvaro.dll
 J:\Proyectos\Pagina Alvaro Herrera\Web_Alvaro\Web_Alvaro\obj\Debug\net10.0\Web_Alvaro.csproj.Up2Date
 J:\Proyectos\Pagina Alvaro Herrera\Web_Alvaro\Web_Alvaro\obj\Debug\net10.0\compressed\7u9m8gpbsy-{0}-nxjlmqa41v-nxjlmqa41v.gz
+J:\Proyectos\Pagina Alvaro Herrera\Web_Alvaro\Web_Alvaro\obj\Debug\net10.0\Web_Alvaro.sourcelink.json
